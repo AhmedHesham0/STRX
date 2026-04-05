@@ -504,7 +504,7 @@ img {
   align-items: center;
   padding: 8rem 5%;
   gap: 5rem;
-  background: radial-gradient(circle at right, rgba(255, 51, 102, 0.08) 0%, var(--bg-primary) 60%);
+  background: radial-gradient(circle at right, rgba(27, 94, 32, 0.1) 0%, var(--bg-primary) 60%);
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
