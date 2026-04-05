@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STRX | Premium Creatine</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <script>
+        // Prevent preloader flash on return visits (skip if returning via links, play if reloading)
+        const navEntries = window.performance.getEntriesByType("navigation");
+        const isReload = navEntries.length > 0 && navEntries[0].type === "reload";
+
+        if (sessionStorage.getItem('strx_intro_played') && !isReload) {
+            document.documentElement.classList.add('skip-intro');
+        }
+    </script>
+</head>
+
+<body>
+    <div class="preloader" style="cursor: pointer;">
+        <video src="img/0405(1).mp4" playsinline preload="auto"></video>
+        <div class="intro-overlay"
+            style="position: absolute; bottom: 8%; color: white; opacity: 0.5; font-size: 0.8rem; letter-spacing: 2px;">
+            CLICK TO START IF BLOCKED BY BROWSER</div>
+    </div>
+    <div class="custom-cursor"></div>
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo">STRX<span>.</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html" style="color: var(--accent-color);">Home</a></li>
+            <li><a href="products.html">Product</a></li>
+            <li><a href="bundles.html">Bundles</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+        <div class="nav-actions">
+            <a href="cart.html" class="cart-btn">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-badge">0</span>
+            </a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="bg-element bg-element-1">STRX</div>
+            <div class="hero-content">
+                <h1 class="hero-title">PURE <br><span class="highlight">POWER.</span></h1>
+                <p class="hero-subtitle">The ultimate micronized creatine monohydrate formula engineered for explosive
+                    strength, faster recovery, and peak muscular performance.</p>
+                <div class="hero-buttons">
+                    <a href="products.html" class="btn-primary">Shop Now</a>
+                    <a href="product.html" class="btn-secondary">Explore Formula</a>
+                </div>
+            </div>
+            <div class="hero-image-wrapper">
+                <img src="img/16.png" alt="STRX Creatine Premium Bottle" class="hero-img">
+            </div>
+        </section>
+
+        <section class="benefits-section">
+            <div class="section-container">
+                <h2 class="section-title">ENGINEERED FOR <span class="highlight">DOMINANCE</span></h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <i class="fas fa-bolt benefit-icon"></i>
+                        <h3>Explosive Power</h3>
+                        <p>Dramatically increase your ATP production to push heavier weights and explode through every
+                            single rep.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <i class="fas fa-hammer benefit-icon"></i>
+                        <h3>Muscle Hypertrophy</h3>
+                        <p>Enhance muscle cell volume and trigger unparalleled growth signaling within days of
+                            consumption.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <i class="fas fa-heartbeat benefit-icon"></i>
+                        <h3>Rapid Recovery</h3>
+                        <p>Slash recovery times between sets and workouts. Turn exhaustion into fuel and come back
+                            stronger.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-products">
+            <div class="section-container">
+                <div class="header-flex">
+                    <h2 class="section-title">THE <span class="highlight">ARSENAL</span></h2>
+                    <a href="products.html" class="view-all">View All Products <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="products-carousel">
+                    <!-- Product 1 -->
+                    <div class="product-card">
+                        <div class="card-img-wrapper">
+                            <img src="img/18.png" alt="STRX Phantom Black" class="product-img">
+                        </div>
+                        <h3 class="product-title">STRX Phantom Black</h3>
+                        <p class="product-price">$49.99</p>
+                        <a href="product.html" class="btn-primary" style="display:block; text-align:center;">View
+                            Details</a>
+                    </div>
+                    <!-- Product 2 -->
+                    <div class="product-card">
+                        <div class="card-img-wrapper">
+                            <img src="img/8.png" alt="STRX Glacier White" class="product-img">
+                        </div>
+                        <h3 class="product-title">STRX Glacier White</h3>
+                        <p class="product-price">$49.99</p>
+                        <a href="product.html" class="btn-primary" style="display:block; text-align:center;">View
+                            Details</a>
+                    </div>
+                    <!-- Product 3 -->
+                    <div class="product-card">
+                        <div class="card-img-wrapper">
+                            <img src="img/test 2.png" alt="STRX Special Edition" class="product-img">
+                        </div>
+                        <h3 class="product-title">STRX Special Edition</h3>
+                        <p class="product-price">$59.99</p>
+                        <a href="product.html" class="btn-primary" style="display:block; text-align:center;">View
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="science-section">
+            <div class="science-content">
+                <h2 class="section-title">THE <span class="highlight">SCIENCE</span> OF PURITY</h2>
+                <p>We don't do proprietary blends. We do bio-availability. Our micronization process creates particles
+                    up to 20x smaller than standard creatine, ensuring 99.9% absorption directly into your muscle
+                    tissues without bloat or digestive stress.</p>
+                <ul class="science-list">
+                    <li><i class="fas fa-check"></i> HPLC Tested & Certified</li>
+                    <li><i class="fas fa-check"></i> 100% Vegan Sourced</li>
+                    <li><i class="fas fa-check"></i> Zero Artificial Sweeteners</li>
+                </ul>
+                <a href="about.html" class="btn-secondary" style="margin-top: 2rem;">Read Our Story</a>
+            </div>
+            <div class="science-image">
+                <img src="img/pixels.png" alt="Particles" class="floating-img">
+            </div>
+        </section>
+
+        <footer class="global-footer">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h2>STRX<span>.</span></h2>
+                    <p>Unlock your cellular potential.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Shop</h3>
+                    <ul>
+                        <li><a href="products.html">All Products</a></li>
+                        <li><a href="bundles.html">Bundles & Stacks</a></li>
+                        <li><a href="cart.html">View Cart</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h3>Join the Elite</h3>
+                    <p>Subscribe for exclusive drops and performance tips.</p>
+                    <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed!')">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit"><i class="fas fa-arrow-right"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 STRX Performance. All rights reserved.</p>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

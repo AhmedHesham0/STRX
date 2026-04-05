@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STRX | Bundles</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        .page-header { padding: 120px 5% 50px; background: var(--bg-secondary); text-align: center; }
+        .page-header h1 { font-size: 4rem; color: var(--accent-color); }
+        .bundles-wrapper { padding: 5rem 5%; display: flex; flex-direction: column; gap: 4rem;}
+        .bundle-card { display: flex; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 10px; overflow: hidden; transition: 0.3s; }
+        .bundle-card:hover { border-color: var(--accent-color); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .bundle-images { flex: 1; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, rgba(255,51,102,0.1) 0%, transparent 70%); padding: 2rem;}
+        .bundle-images img { height: 280px; margin: 0 -20px; transition: transform 0.5s; filter: drop-shadow(0 15px 25px rgba(0,0,0,0.6));}
+        .bundle-card:hover .bundle-images img { transform: translateY(-10px) scale(1.05); }
+        .bundle-info { flex: 1; padding: 3rem; display: flex; flex-direction: column; justify-content: center; }
+        .bundle-title { font-size: 3rem; margin-bottom: 1rem; }
+        .bundle-price-wrap { display: flex; gap: 1rem; align-items: baseline; margin-bottom: 1rem; }
+        .old-price { text-decoration: line-through; color: var(--text-secondary); font-size: 1.5rem; }
+        .new-price { color: var(--accent-color); font-size: 2.5rem; font-family: var(--font-heading); }
+        .save-badge { background: var(--accent-color); color: white; padding: 5px 10px; border-radius: 2px; font-weight: bold; font-size: 0.9rem; letter-spacing: 1px; }
+        
+        @media (max-width: 768px) {
+            .bundle-card, .bundle-card[style] { flex-direction: column !important; }
+        }
+    </style>
+</head>
+<body>
+    <div class="custom-cursor"></div>
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo">STRX<span>.</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Product</a></li>
+            <li><a href="bundles.html" style="color: var(--accent-color);">Bundles</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+        <div class="nav-actions"><a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i><span class="cart-badge">0</span></a></div>
+    </nav>
+
+    <main>
+        <section class="page-header">
+            <h1>PERFORMANCE BUNDLES</h1>
+            <p>Maximize results line-up. Save when you bundle.</p>
+        </section>
+        
+        <section class="bundles-wrapper">
+            <!-- Bundle 1 -->
+            <div class="bundle-card">
+                <div class="bundle-images">
+                    <img src="img/18.png" alt="Phantom Black" style="z-index: 2;">
+                    <img src="img/8.png" alt="Glacier White" style="z-index: 1;">
+                </div>
+                <div class="bundle-info">
+                    <div class="save-badge" style="width: fit-content; margin-bottom: 1rem;">SAVE 15%</div>
+                    <h2 class="bundle-title">The Twin Pack</h2>
+                    <p style="color: var(--text-secondary); margin-bottom: 2rem; font-size: 1.1rem; line-height: 1.6;">Double the power. Get both our signature flavors in one package to cycle through your peak phases seamlessly.</p>
+                    <div class="bundle-price-wrap">
+                        <span class="old-price">$99.98</span>
+                        <span class="new-price">$84.99</span>
+                    </div>
+                    <button class="btn-primary" style="width: fit-content;">Add Bundle to Cart</button>
+                </div>
+            </div>
+            
+            <!-- Bundle 2 -->
+            <div class="bundle-card" style="flex-direction: row-reverse;">
+                <div class="bundle-images">
+                    <img src="img/test 2.png" alt="Special Edition" style="z-index: 3;">
+                    <img src="img/18.png" alt="Phantom Black" style="z-index: 2;">
+                    <img src="img/8.png" alt="Glacier White" style="z-index: 1;">
+                </div>
+                <div class="bundle-info">
+                    <div class="save-badge" style="width: fit-content; margin-bottom: 1rem;">SAVE 25%</div>
+                    <h2 class="bundle-title">The Ultimate Stack</h2>
+                    <p style="color: var(--text-secondary); margin-bottom: 2rem; font-size: 1.1rem; line-height: 1.6;">The full arsenal. Phantom Black, Glacier White, and the Special Edition. Enough supply to blast through plateaus and maintain absolute dominance.</p>
+                    <div class="bundle-price-wrap">
+                        <span class="old-price">$159.97</span>
+                        <span class="new-price">$119.99</span>
+                    </div>
+                    <button class="btn-primary" style="width: fit-content;">Add Bundle to Cart</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        gsap.utils.toArray('.bundle-card').forEach((card, i) => {
+            gsap.from(card, {
+                scrollTrigger: {
+                    trigger: card,
+                    start: "top 85%",
+                },
+                y: 50,
+                opacity: 0,
+                duration: 0.8,
+                ease: "power3.out"
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STRX | Products</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        .page-header { padding: 120px 5% 50px; background: var(--bg-secondary); text-align: center; }
+        .page-header h1 { font-size: 4rem; color: var(--accent-color); }
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; padding: 5rem 5%; }
+        .product-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); border-radius: 10px; padding: 2rem; transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden; }
+        .product-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.5); border-color: rgba(255,51,102,0.3); }
+        .product-img { width: 100%; height: 300px; object-fit: contain; margin-bottom: 1.5rem; transition: transform 0.5s; }
+        .product-card:hover .product-img { transform: scale(1.1); }
+        .product-title { font-size: 1.5rem; margin-bottom: 0.5rem; }
+        .product-price { font-size: 1.25rem; color: var(--text-secondary); margin-bottom: 1.5rem; }
+        .btn-block { display: block; width: 100%; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="custom-cursor"></div>
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo">STRX<span>.</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html" style="color: var(--accent-color);">Product</a></li>
+            <li><a href="bundles.html">Bundles</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+        <div class="nav-actions"><a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i><span class="cart-badge">0</span></a></div>
+    </nav>
+
+    <main>
+        <section class="page-header">
+            <h1>OUR PRODUCTS</h1>
+            <p>Elevate your performance with our premium selection.</p>
+        </section>
+        
+        <section class="products-grid">
+            <div class="product-card">
+                <a href="product.html">
+                    <img src="img/18.png" alt="STRX Creatine Premium Black" class="product-img">
+                    <h3 class="product-title">STRX Phantom Black</h3>
+                    <p class="product-price">$49.99</p>
+                </a>
+                <button class="btn-primary btn-block">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <a href="product.html">
+                    <img src="img/8.png" alt="STRX Creatine Glacier White" class="product-img">
+                    <h3 class="product-title">STRX Glacier White</h3>
+                    <p class="product-price">$49.99</p>
+                </a>
+                <button class="btn-primary btn-block">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <a href="product.html">
+                    <img src="img/test 2.png" alt="STRX Creatine Special Edition" class="product-img">
+                    <h3 class="product-title">STRX Special Edition</h3>
+                    <p class="product-price">$59.99</p>
+                </a>
+                <button class="btn-primary btn-block">Add to Cart</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

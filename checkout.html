@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STRX | Checkout</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        .checkout-section { padding: 150px 5% 5rem; min-height: 100vh; }
+        .checkout-container { max-width: 1200px; margin: 0 auto; display: flex; gap: 4rem; flex-wrap: wrap;}
+        .checkout-form-area { flex: 2; min-width: 300px; }
+        .checkout-sidebar { flex: 1; min-width: 300px; background: rgba(255,255,255,0.03); padding: 2rem; border-radius: 10px; border: 1px solid rgba(255,255,255,0.05); height: fit-content;}
+        .form-section { margin-bottom: 3rem; }
+        .form-section h2 { font-size: 2rem; margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .form-row { display: flex; gap: 1.5rem; margin-bottom: 1.5rem; }
+        .form-group { flex: 1; }
+        .form-group label { display: block; margin-bottom: 0.5rem; font-size: 0.9rem; color: var(--text-secondary); }
+        .form-control { width: 100%; padding: 1rem; background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1); color: white; border-radius: 2px; font-family: var(--font-primary); font-size: 1rem; }
+        .form-control:focus { outline: none; border-color: var(--accent-color); }
+        .checkout-sidebar h3 { font-size: 1.8rem; margin-bottom: 2rem; }
+        .sidebar-item { display: flex; justify-content: space-between; margin-bottom: 1rem; align-items: center; }
+        .sidebar-item img { width: 60px; border-radius: 5px; }
+        .sidebar-total { font-size: 1.5rem; color: var(--accent-color); font-weight: bold; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between;}
+    </style>
+</head>
+<body>
+    <div class="custom-cursor"></div>
+    <nav class="navbar" style="justify-content: space-between; display: flex;">
+        <a href="index.html" class="nav-logo">STRX<span>.</span></a>
+        <!-- Minimal navbar for checkout to reduce distraction -->
+        <a href="cart.html" style="color: var(--text-secondary); text-transform: uppercase; font-size: 0.9rem; font-weight: 600;">Return to Cart <i class="fas fa-arrow-right"></i></a>
+    </nav>
+    <main>
+        <section class="checkout-section">
+            <div class="checkout-container">
+                <div class="checkout-form-area gsap-form">
+                    <h1 style="font-size: 3rem; margin-bottom: 2rem;">CHECKOUT</h1>
+                    <form onsubmit="event.preventDefault(); document.getElementById('successOverlay').style.display='flex';">
+                        <div class="form-section">
+                            <h2>Contact Information</h2>
+                            <div class="form-group">
+                                <input type="email" class="form-control" placeholder="Email" required>
+                            </div>
+                        </div>
+                        <div class="form-section">
+                            <h2>Shipping Address</h2>
+                            <div class="form-row">
+                                <div class="form-group"><input type="text" class="form-control" placeholder="First Name" required></div>
+                                <div class="form-group"><input type="text" class="form-control" placeholder="Last Name" required></div>
+                            </div>
+                            <div class="form-group" style="margin-bottom: 1.5rem;"><input type="text" class="form-control" placeholder="Address" required></div>
+                            <div class="form-row">
+                                <div class="form-group"><input type="text" class="form-control" placeholder="City" required></div>
+                                <div class="form-group"><input type="text" class="form-control" placeholder="ZIP/Postal Code" required></div>
+                            </div>
+                        </div>
+                        <div class="form-section">
+                            <h2>Payment Integration (Mock)</h2>
+                            <div class="form-group" style="margin-bottom: 1.5rem;"><input type="text" class="form-control" placeholder="Card Number" required></div>
+                            <div class="form-row">
+                                <div class="form-group"><input type="text" class="form-control" placeholder="MM/YY" required></div>
+                                <div class="form-group"><input type="text" class="form-control" placeholder="CVC" required></div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-primary" style="width: 100%; font-size: 1.2rem; padding: 1.5rem;">PLACE ORDER - $99.98</button>
+                    </form>
+                </div>
+                <div class="checkout-sidebar gsap-sidebar">
+                    <h3>Summary</h3>
+                    <div class="sidebar-item">
+                        <div style="display: flex; gap: 1rem; align-items: center;">
+                            <img src="img/18.png" alt="Product">
+                            <div>STRX Phantom Black <br><span style="color: var(--text-secondary); font-size: 0.8rem;">Qty: 2</span></div>
+                        </div>
+                        <div>$99.98</div>
+                    </div>
+                    <div class="sidebar-total">
+                        <span>Total (USD)</span>
+                        <span>$99.98</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Success Overlay -->
+        <div id="successOverlay" style="display: none; position: fixed; top:0;left:0;width:100%;height:100vh;background:rgba(10,10,12,0.95); z-index:9999; justify-content:center; align-items:center; flex-direction:column; text-align:center;">
+             <i class="fas fa-check-circle" style="font-size: 5rem; color: var(--accent-color); margin-bottom: 1rem;"></i>
+             <h1 style="font-size: 4rem; margin-bottom:1rem;">ORDER CONFIRMED</h1>
+             <p style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 2rem;">Your STRX supply is on the way. Unleash your potential.</p>
+             <a href="index.html" class="btn-primary">RETURN HOME</a>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        gsap.from(".gsap-form", { y: 30, opacity: 0, duration: 0.8, ease: "power3.out" });
+        gsap.from(".gsap-sidebar", { x: 30, opacity: 0, duration: 0.8, ease: "power3.out", delay: 0.2 });
+    </script>
+</body>
+</html>

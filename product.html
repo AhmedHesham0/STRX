@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STRX Phantom Black | Details</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        .product-detail-section { display: flex; padding: 120px 5% 5rem; gap: 5rem; min-height: 100vh;}
+        .product-gallery { flex: 1; position: relative; }
+        .product-gallery img { width: 100%; position: sticky; top: 120px; filter: drop-shadow(0 20px 40px rgba(0,0,0,0.8)); }
+        .product-info { flex: 1; padding-bottom: 5rem; }
+        .product-info h1 { font-size: 4rem; margin-bottom: 1rem; }
+        .product-info .price { font-size: 2rem; color: var(--accent-color); font-weight: 600; margin-bottom: 2rem; font-family: var(--font-heading);}
+        .product-info p { font-size: 1.1rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 2rem; }
+        .features-list { list-style: none; margin-bottom: 3rem; }
+        .features-list li { margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem; font-size: 1.1rem; }
+        .features-list li i { color: var(--accent-color); }
+        .quantity-selector { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; }
+        .quantity-btn { background: rgba(255,255,255,0.1); border: none; color: white; width: 40px; height: 40px; cursor: pointer; font-size: 1.2rem; display: flex; justify-content: center; align-items: center; transition: 0.3s; }
+        .quantity-btn:hover { background: var(--accent-color); }
+        .quantity-input { width: 60px; height: 40px; background: transparent; border: 1px solid rgba(255,255,255,0.2); color: white; text-align: center; font-size: 1.2rem; }
+        .btn-add { width: 100%; font-size: 1.2rem; padding: 1.5rem; }
+    </style>
+</head>
+<body>
+    <div class="custom-cursor"></div>
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo">STRX<span>.</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html" style="color: var(--accent-color);">Product</a></li>
+            <li><a href="bundles.html">Bundles</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+        <div class="nav-actions"><a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i><span class="cart-badge">0</span></a></div>
+    </nav>
+
+    <main>
+        <section class="product-detail-section">
+            <div class="product-gallery">
+                <img src="img/18.png" alt="STRX Phantom Black" id="main-product-img">
+            </div>
+            <div class="product-info">
+                <h1>Phantom Black</h1>
+                <div class="price">$49.99</div>
+                <p>Micronized Creatine Monohydrate parsed through extreme high-tech filtration for absolute purity. STRX Phantom Black delivers the optimal cellular hydration and ATP synthesis engine for those who demand the pinnacle of performance.</p>
+                <ul class="features-list">
+                    <li><i class="fas fa-check-circle"></i> 5g Pure Creatine Monohydrate</li>
+                    <li><i class="fas fa-bolt"></i> Enhanced Muscle Power & Endurance</li>
+                    <li><i class="fas fa-water"></i> Fast Absorption Micronized Powder</li>
+                    <li><i class="fas fa-ban"></i> Zero Sugar, Zero Fillers</li>
+                </ul>
+                <div class="purchase-actions" style="display: flex; gap: 1.5rem; align-items: center; width: 100%;">
+                    <div class="quantity-selector" style="margin-bottom: 0;">
+                        <button class="quantity-btn" onclick="document.getElementById('qty').value = Math.max(1, parseInt(document.getElementById('qty').value)-1)">-</button>
+                        <input type="number" id="qty" class="quantity-input" value="1" min="1">
+                        <button class="quantity-btn" onclick="document.getElementById('qty').value = parseInt(document.getElementById('qty').value)+1">+</button>
+                    </div>
+                    <button class="btn-primary btn-add" style="margin: 0; padding: 1.5rem; flex: 1;">Add to Cart - <span id="btn-price">$49.99</span></button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        gsap.from(".product-info > *", {
+            y: 30, opacity: 0, duration: 0.8, stagger: 0.1, ease: "power3.out"
+        });
+        gsap.from("#main-product-img", {
+            scale: 0.8, opacity: 0, rotation: -10, duration: 1.2, ease: "power3.out"
+        });
+        
+        // Dynamic price update
+        document.querySelectorAll('.quantity-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const qty = document.getElementById('qty').value;
+                document.getElementById('btn-price').innerText = '$' + (49.99 * qty).toFixed(2);
+            });
+        });
+    </script>
+</body>
+</html>

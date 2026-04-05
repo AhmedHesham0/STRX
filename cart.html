@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STRX | Your Cart</title>
+    <!-- ... Includes ... -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        .cart-section { padding: 150px 5% 5rem; min-height: 100vh; }
+        .cart-container { max-width: 1200px; margin: 0 auto; display: flex; gap: 4rem; flex-wrap: wrap; }
+        .cart-items { flex: 2; min-width: 300px; }
+        .cart-item { display: flex; gap: 2rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding: 2rem 0; align-items: center; }
+        .cart-item img { width: 120px; border-radius: 10px; background: rgba(255,255,255,0.05); }
+        .item-details { flex: 1; }
+        .item-title { font-size: 1.5rem; margin-bottom: 0.5rem; }
+        .item-price { color: var(--accent-color); font-weight: bold; font-size: 1.2rem; }
+        .item-actions { display: flex; align-items: center; gap: 2rem; margin-top: 1rem; }
+        .qty-controls { display: flex; align-items: center; gap: 1rem; }
+        .qty-btn { background: rgba(255,255,255,0.1); border: none; color: white; width: 30px; height: 30px; cursor: pointer; transition: 0.3s; }
+        .qty-btn:hover { background: var(--accent-color); }
+        .remove-btn { color: var(--text-secondary); cursor: pointer; font-size: 0.9rem; border: none; background: none; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+        .remove-btn:hover { color: var(--accent-color); }
+        .cart-summary { flex: 1; min-width: 300px; background: rgba(255,255,255,0.03); padding: 2rem; border-radius: 10px; height: fit-content; border: 1px solid rgba(255,255,255,0.05); }
+        .summary-title { font-size: 2rem; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .summary-row { display: flex; justify-content: space-between; margin-bottom: 1.5rem; font-size: 1.1rem; }
+        .summary-total { font-size: 1.5rem; font-weight: bold; color: var(--accent-color); margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1); }
+        .btn-checkout { width: 100%; margin-top: 2rem; font-size: 1.1rem; }
+    </style>
+</head>
+<body>
+    <div class="custom-cursor"></div>
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo">STRX<span>.</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Product</a></li>
+            <li><a href="bundles.html">Bundles</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+        <div class="nav-actions"><a href="cart.html" class="cart-btn" style="color: var(--accent-color);"><i class="fas fa-shopping-cart"></i><span class="cart-badge">2</span></a></div>
+    </nav>
+    <main>
+        <section class="cart-section">
+            <div class="cart-container">
+                <div class="cart-items">
+                    <h1 style="font-size: 3rem; margin-bottom: 2rem;">YOUR CART</h1>
+                    <!-- Populated by main.js dynamic cart logic -->
+                </div>
+                <div class="cart-summary gsap-sidebar" style="display: none;">
+                    <h3 class="summary-title">ORDER SUMMARY</h3>
+                    <!-- Populated by main.js dynamic cart logic -->
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        gsap.from(".cart-item", { x: -30, opacity: 0, duration: 0.6, stagger: 0.1, ease: "power3.out" });
+        gsap.from(".gsap-sidebar", { scale: 0.95, opacity: 0, duration: 0.6, ease: "power3.out", delay: 0.3 });
+    </script>
+</body>
+</html>

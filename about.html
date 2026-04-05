@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STRX | About Us</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        .about-hero { padding: 150px 5% 50px; text-align: center; }
+        .about-hero h1 { font-size: 5rem; color: var(--accent-color); margin-bottom: 1.5rem; }
+        .about-hero p { font-size: 1.2rem; color: var(--text-secondary); max-width: 800px; margin: 0 auto; line-height: 1.8; }
+        
+        .mission-section { display: flex; padding: 5rem 5%; gap: 4rem; align-items: center; }
+        .mission-text { flex: 1; }
+        .mission-text h2 { font-size: 3rem; margin-bottom: 1.5rem; }
+        .mission-text p { font-size: 1.1rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 1.5rem; }
+        .mission-img { flex: 1; text-align: center; }
+        .mission-img img { border-radius: 20px; filter: grayscale(50%) contrast(1.2); max-width: 100%; box-shadow: -20px 20px 0 var(--accent-color); transition: 0.5s; }
+        .mission-img img:hover { transform: translate(10px, -10px); box-shadow: -30px 30px 0 var(--accent-hover); filter: grayscale(0%); }
+    </style>
+</head>
+<body>
+    <div class="custom-cursor"></div>
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo">STRX<span>.</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Product</a></li>
+            <li><a href="bundles.html">Bundles</a></li>
+            <li><a href="about.html" style="color: var(--accent-color);">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+        <div class="nav-actions"><a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i><span class="cart-badge">0</span></a></div>
+    </nav>
+
+    <main>
+        <section class="about-hero">
+            <h1 class="gsap-hero">REDEFINING LIMITS</h1>
+            <p class="gsap-hero">At STRX, we believe that human potential is infinite. We formulate supplements that bridge the gap between where you are and where you want to be.</p>
+        </section>
+
+        <section class="mission-section">
+            <div class="mission-img">
+                <img src="img/test.png" alt="STRX Engineering" style="width: 80%">
+            </div>
+            <div class="mission-text">
+                <h2>OUR MISSION</h2>
+                <p>Born from a relentless pursuit of performance perfection, STRX is not just another supplement brand. We are a collective of bio-engineers, athletes, and visionaries dedicated to creating the purest, most efficacious performance enhancers on the planet.</p>
+                <p>Every batch of our signature micronized creatine undergoes rigorous third-party testing to ensure zero impurities. We skip the fillers, the artificial nonsense, and give you exactly what your cells need to thrive.</p>
+                <a href="products.html" class="btn-primary" style="margin-top: 1rem;">View Our Products</a>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        gsap.from(".gsap-hero", { y: 30, opacity: 0, duration: 1, stagger: 0.2, ease: "power3.out" });
+        gsap.from(".mission-text > *", {
+            scrollTrigger: { trigger: ".mission-section", start: "top 80%" },
+            x: 50, opacity: 0, duration: 0.8, stagger: 0.2, ease: "power3.out"
+        });
+        gsap.from(".mission-img", {
+            scrollTrigger: { trigger: ".mission-section", start: "top 80%" },
+            x: -50, opacity: 0, duration: 0.8, ease: "power3.out"
+        });
+    </script>
+</body>
+</html>
