@@ -112,15 +112,39 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
         const splashVid = preloader.querySelector('video');
         if (splashVid) {
-            splashVid.muted = false; // Force sound
-            splashVid.play().catch(e => console.log("Autoplay blocked. Waiting for click."));
-            splashVid.addEventListener('ended', completePreloaderFade);
+            const isTouchDevice = ('ontouchstart' in window) || navigator.maxTouchPoints > 0;
             
-            preloader.addEventListener('click', () => {
-                splashVid.play();
+            if (isTouchDevice) {
+                // Mobile: MUST start muted for autoplay to work (browser policy)
+                // Then tap anywhere to unmute
+                splashVid.muted = true;
+                splashVid.play().catch(() => {});
+                
                 const overlay = preloader.querySelector('.intro-overlay');
-                if (overlay) overlay.style.display = 'none';
-            });
+                if (overlay) overlay.textContent = 'TAP FOR SOUND';
+
+                preloader.addEventListener('click', () => {
+                    splashVid.muted = false;
+                    if (overlay) overlay.style.display = 'none';
+                }, { once: true });
+            } else {
+                // Desktop: play with sound directly
+                splashVid.muted = false;
+                splashVid.play().catch(e => {
+                    // If still blocked (e.g. no prior interaction), wait for click
+                    const overlay = preloader.querySelector('.intro-overlay');
+                    if (overlay) overlay.style.display = 'flex';
+                });
+
+                preloader.addEventListener('click', () => {
+                    splashVid.muted = false;
+                    splashVid.play();
+                    const overlay = preloader.querySelector('.intro-overlay');
+                    if (overlay) overlay.style.display = 'none';
+                });
+            }
+
+            splashVid.addEventListener('ended', completePreloaderFade);
         } else {
             setTimeout(completePreloaderFade, 2500);
         }
