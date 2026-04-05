@@ -763,6 +763,16 @@ img {
   }
 }
 
+/* Hide custom cursor on touch/mobile devices */
+@media (hover: none) and (pointer: coarse) {
+  .custom-cursor {
+    display: none !important;
+  }
+  body, a, button, .cart-btn {
+    cursor: auto !important;
+  }
+}
+
 /* Custom Cursor */
 .custom-cursor {
   position: fixed;
